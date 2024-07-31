@@ -44,4 +44,28 @@ class RecipeApi {
 
     return recipes;
   }
+/////////////////////////////
+
+  static Future<void> postRecipeData(Map<String, dynamic> data) async {
+    final url =
+        'https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/analyze?language=en&includeNutrition=false&includeTaste=false';
+
+    final response = await http.post(
+      Uri.parse(url),
+      headers: {
+        'Content-Type': 'application/json',
+        'x-rapidapi-host':
+            'spoonacular-recipe-food-nutrition-v1.p.rapidapi.com',
+        'x-rapidapi-key': '59baf28425msh7a46bb827b3ca52p1a8e55jsn0d748c22963c',
+      },
+      body: jsonEncode(data),
+    );
+    print('Response: ${response.body}');
+    if (response.statusCode == 201) {
+      print('Response: ${response.body}');
+    } else {
+      // Handle error
+      print('Failed to post data: ${response.statusCode}');
+    }
+  }
 }
