@@ -30,7 +30,7 @@ class RecipeApi {
       var details = item['content']['details'] ?? {};
       String imageUrl =
           details['images'] != null && details['images'].isNotEmpty
-              ? details['images'][0]['hostesdLargeUrl'] ?? ''
+              ? details['images'][0]['hostedLargeUrl'] ?? ''
               : '';
       recipes.add(
         Recipe(

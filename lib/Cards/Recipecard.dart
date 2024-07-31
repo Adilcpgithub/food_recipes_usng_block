@@ -13,6 +13,9 @@ class RecipeCard extends StatelessWidget {
   });
   @override
   Widget build(BuildContext context) {
+    print('11111111111111111111111111111');
+    print(thumbnailUrl);
+    print('111111111111111111111111111111111111111111');
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 22, vertical: 10),
       width: MediaQuery.of(context).size.width,
